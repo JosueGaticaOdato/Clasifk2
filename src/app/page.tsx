@@ -1,4 +1,5 @@
 import { getRubros } from '@/services/rubros';
+import { ArrowRight, Grid, Search } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function Home() {
@@ -35,7 +36,7 @@ export default async function Home() {
             className="w-full max-w-3xl flex flex-col md:flex-row gap-4 bg-white p-4 brutal-border brutal-shadow"
           >
             <div className="flex-grow flex relative">
-              {/* <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-outline w-6 h-6" /> */}
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-outline w-6 h-6" />
               <input
                 type="text"
                 placeholder="¿Qué estás buscando? (ej. Mecánico, Acopio, Pizza...)"
@@ -48,7 +49,7 @@ export default async function Home() {
               type="submit"
               className="bg-secondary-fixed text-on-background brutal-border-sm py-4 px-8 font-headline text-lg uppercase font-bold hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-y-0 active:shadow-none flex items-center justify-center gap-2 cursor-pointer"
             >
-              Buscar
+              Buscar <ArrowRight className="w-5 h-5" />
             </button>
           </form>
 
@@ -73,7 +74,7 @@ export default async function Home() {
 
           <div className="mt-4 md:mt-0 flex gap-2">
             <div className="bg-on-background text-on-primary p-2 brutal-border-sm">
-              {/* <Grid className="w-5 h-5" /> */}
+              <Grid className="w-5 h-5" />
             </div>
           </div>
         </div>
@@ -101,11 +102,6 @@ export default async function Home() {
                 {/* <div className="absolute top-4 right-4 bg-secondary-fixed brutal-border-sm px-2.5 py-1 font-label text-xs text-on-background uppercase font-bold shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                   +{rubro?.totalAnuncios} Anuncios
                 </div> */}
-
-                {/* Icono */}
-                <div className="absolute bottom-4 left-4 bg-on-background p-2 brutal-border-sm shadow-[2px_2px_0px_rgba(255,255,255,1)]">
-                  {/* {getIcon(rubro.icono)} */}
-                </div>
               </header>
 
               {/* Card */}
@@ -117,7 +113,7 @@ export default async function Home() {
                   {rubro?.descripcion}
                 </p>
                 <div className="flex items-center gap-1 font-label text-xs font-black text-primary group-hover:translate-x-1 transition-transform uppercase">
-                  Ver categorías
+                  Ver categorías <ArrowRight className="w-4 h-4 inline" />
                 </div>
               </section>
             </Link>
