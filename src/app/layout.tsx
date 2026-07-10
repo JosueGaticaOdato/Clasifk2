@@ -1,0 +1,20 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: 'CLASIFK2 Chivilcoy - Guía Comercial',
+  description: 'Guía comercial y de servicios de la ciudad de Chivilcoy con diseño neo-brutalista de alto impacto.',
+};
+
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+  return (
+    <html lang="es" className={`h-full antialiased`}>
+      <body className="min-h-screen bg-background text-on-background flex flex-col body-dot-bg font-sans selection:bg-secondary-fixed selection:text-on-background" suppressHydrationWarning>
+        <main className="flex-grow flex flex-col">
+          {children}
+        </main>
+      </body>
+    </html>
+  );
+}
