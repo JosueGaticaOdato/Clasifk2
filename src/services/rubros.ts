@@ -19,7 +19,37 @@ export async function getRubros() {
         console.error('Error al obtener rubros:', error);
         throw new Error('No se pudieron cargar los rubros');
     }
-    console.log("data", data);
+    //console.log("data", data);
 
+    return data;
+}
+
+export async function getRubro(rubroID: string) {
+
+    const { data, error } = await supabase
+        .from('rubros')
+        .select('id, nombre, slug, icono')
+        .eq('id', rubroID)
+        .maybeSingle(); // Retorna un objeto o null si no se encuentra
+
+    if (error) {
+        console.error('Error al obtener rubros:', error);
+        throw new Error('No se pudieron cargar los rubros');
+    }
+    //console.log("data", data);
+
+    return data;
+}
+
+export async function getRubroBySlug(slug: string) {
+    const { data, error } = await supabase
+        .from('rubros')
+        .select('id, nombre, slug, icono')
+        .eq('slug', slug)
+        .maybeSingle(); // Retorna un objeto o null si no se encuentra
+    if (error) {
+        console.error('Error al obtener rubro por slug:', error);
+        throw new Error('No se pudo cargar el rubro');
+    }
     return data;
 }
