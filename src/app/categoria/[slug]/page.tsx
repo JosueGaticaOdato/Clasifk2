@@ -40,7 +40,7 @@ export default async function Categoria({ params }: { params: { slug: string } }
                 </div>
             </section>
 
-            {/* Grid layout */}
+            {/* Grid layout Categorias */}
 
             <section className="flex flex-col lg:flex-row gap-8">
 
