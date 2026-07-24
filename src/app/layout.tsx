@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: 'CLASIFK2 Chivilcoy - Guía Comercial',
-  description: 'Guía comercial y de servicios de la ciudad de Chivilcoy con diseño neo-brutalista de alto impacto.',
+  description: 'Guía comercial y de servicios de la ciudad de Chivilcoy.',
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
